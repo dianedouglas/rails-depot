@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize
+  # to only allow certain actions say skip_before_action :authorize, only: [:new, :create]
   def new
     # loads login form.
   end
