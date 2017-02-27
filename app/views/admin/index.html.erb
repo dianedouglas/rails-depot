@@ -1,2 +1,5 @@
 <h1>Welcome <%= @user.name %></h1>
 It's <%= Time.now %>
+<div>
+  <p><%= link_to 'Edit User Profile', edit_user_path(@user) %></p>
+</div>

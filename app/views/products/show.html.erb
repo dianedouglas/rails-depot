@@ -1,4 +1,6 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
 <p>
   <strong>Title:</strong>
@@ -7,17 +9,15 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @product.description %>
+  <dd><%= strip_tags(@product.description) %></dd>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+<%= image_tag(@product.image_url, class: 'list_image') %>
+
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  <span class="price"><%= number_to_currency(@product.price) %></span>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
